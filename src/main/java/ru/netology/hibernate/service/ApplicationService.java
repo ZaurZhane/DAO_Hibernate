@@ -18,16 +18,15 @@ public class ApplicationService {
     }
 
     public List<Person> getPersonByCity(String city) {
-        return applicationRepository.findByCityOfLiving(city);
+        return applicationRepository.findPersonsByCity(city);
     }
 
     public List<Person> getPersonsByAgeLessThan(int age) {
-        return applicationRepository.findByPersonKeyAgeLessThanOrderByPersonKeyAgeAsc(age);
+        return applicationRepository.findPersonsByAgeLessThan(age);
     }
 
     public Optional<Person> getPersonByNameAndSurname(String name, String surname) {
-        return applicationRepository.findByPersonKeyNameAndPersonKeySurname(name, surname);
-
+        return applicationRepository.findPersonByNameAndSurname(name, surname);
     }
 
 }
